@@ -1,3 +1,27 @@
 {
-    "cmake.sourceDirectory": "${workspaceFolder}/farmlandManage"
+    "cmake.sourceDirectory": "${workspaceFolder}/farmlandManage",
+    "files.associations": {
+        "memory": "cpp",
+        "new": "cpp",
+        "iosfwd": "cpp",
+        "*.tcc": "cpp"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.meta": true,
+        "**/*.mat": true,
+        "**/*.anim": true,
+        "**/*.resx": true,
+        "**/*.prefab": true,
+        "**/*.manifest": true,
+        "**/*.controller": true,
+        "**/*.png": true,
+        "**/*.jpg": true,
+        "**/*.d": true,
+        "**/*.o": true
+    }
 }
