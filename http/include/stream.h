@@ -1,3 +1,5 @@
+#ifndef HTTP_STREAM_H
+#define HTTP_STREAM_H
 #include "httpbase.h"
 namespace keno::http {
 class Stream {
@@ -22,3 +24,4 @@ public:
   ssize_t write(const std::string &s);
 };
 } // namespace keno::http
+#endif // HTTP_STREAM_H

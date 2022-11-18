@@ -1,8 +1,12 @@
+#ifndef HTTP_CLIENT_IMPL_H
+#define HTTP_CLIENT_IMPL_H
 #include "httpbase.h"
 #include "request.h"
+#include "response.h"
 #include "result.h"
 #include "stream.h"
 namespace keno::http {
+using Logger = std::function<void(const Request &, const Response &)>;
 class ClientImpl {
 public:
   explicit ClientImpl(const std::string &host);
@@ -215,8 +219,7 @@ public:
 #ifdef CPPHTTPLIB_OPENSSL_SUPPORT
   void enable_server_certificate_verification(bool enabled);
 #endif
-
-  void set_logger(Logger logger);
+  template <typename Logger> void set_logger(Logger logger);
 
 protected:
   struct Socket {
@@ -326,7 +329,6 @@ protected:
 #ifdef HTTP_OPENSSL_SUPPORT
   bool server_certificate_verification_ = true;
 #endif
-
   Logger logger_;
 
 private:
@@ -356,3 +358,4 @@ private:
   virtual bool is_ssl() const;
 };
 } // namespace keno::http
+#endif // HTTP_CLIENT_IMPL_H

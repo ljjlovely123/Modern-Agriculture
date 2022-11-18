@@ -1,3 +1,6 @@
+#ifndef HTTP_ERROR_H
+#define HTTP_ERROR_H
+namespace keno::http {
 enum class Error {
   Success = 0,
   Unknown,
@@ -14,3 +17,5 @@ enum class Error {
   Compression,
   ConnectionTimeout,
 };
+}
+#endif // HTTP_ERROR_H

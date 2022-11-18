@@ -1,3 +1,5 @@
+#ifndef HTTP_RESULT_H
+#define HTTP_RESULT_H
 #include "error.h"
 #include "httpbase.h"
 namespace keno::http {
@@ -36,3 +38,5 @@ private:
   Headers request_headers_;
 };
 } // namespace keno::http
+
+#endif // HTTP_RESULT_H

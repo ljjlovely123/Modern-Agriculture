@@ -1,3 +1,5 @@
+#ifndef HTTP_THREAD_POOL_H
+#define HTTP_THREAD_POOL_H
 #include "httpbase.h"
 // 任务队列 用于接受请求放入队列处理请求任务
 namespace keno::http {
@@ -87,3 +89,4 @@ private:
   std::mutex mutex_;
 };
 } // namespace keno::http
+#endif // HTTP_THREAD_POOL_H

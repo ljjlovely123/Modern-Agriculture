@@ -1,9 +1,14 @@
+#ifndef HTTP_SERVER_H
+#define HTTP_SERVER_H
 #include "contentreader.h"
 #include "httpbase.h"
 #include "request.h"
 #include "response.h"
+#include "stream.h"
+#include "threadpool.h"
 namespace keno::http {
 // 定义服务
+using Logger = std::function<void(const Request &, const Response &)>;
 class Server {
 public:
   using Handler = std::function<void(const Request &, Response &)>;
@@ -229,5 +234,5 @@ std::string to_string(const Error error);
 
 std::ostream &operator<<(std::ostream &os, const Error &obj);
 
-
-}
+} // namespace keno::http
+#endif // HTTP_SERVER_H

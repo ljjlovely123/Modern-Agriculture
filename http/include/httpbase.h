@@ -1,3 +1,5 @@
+#ifndef HTTP_BASE_H
+#define HTTP_BASE_H
 #include "config.h"
 #ifdef _WIN32
 #ifndef _CRT_SECURE_NO_WARNINGS
@@ -268,4 +270,8 @@ make_unique(std::size_t n) {
   return std::unique_ptr<T>(new RT[n]);
 }
 
+inline bool has_header(const Headers &headers, const std::string &key) {
+  return headers.find(key) != headers.end();
+}
 } // namespace keno::http
+#endif // HTTP_BASE_H

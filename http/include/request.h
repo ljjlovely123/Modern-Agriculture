@@ -1,3 +1,5 @@
+#ifndef HTTP_REQUEST_H_
+#define HTTP_REQUEST_H_
 #include "httpbase.h"
 namespace keno::http {
 // 请求头
@@ -73,7 +75,8 @@ struct Request {
   //   认证信息长度
   size_t authorization_count_ = 0;
   // 日志函数
-  using Logger = std::function<void(const Request &, const Response &)>;
+  
 };
 
 } // namespace keno::http
+#endif // HTTP_REQUEST_H_

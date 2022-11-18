@@ -1,7 +1,7 @@
+#ifndef HTTP_SSLCLINET_H
+#define HTTP_SSLCLINET_H
 #include "clientimpl.h"
-#include "error.h"
-#include "httpbase.h";
-class ClientImpl;
+
 namespace keno::http {
 
 class SSLClient : public ClientImpl {
@@ -59,3 +59,5 @@ private:
 };
 
 } // namespace keno::http
+
+#endif // HTTP_SSLCLINET_H

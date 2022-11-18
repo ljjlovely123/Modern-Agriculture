@@ -5,8 +5,8 @@
 //  MIT License
 //
 
-#ifndef HTTP_CONFIG_h
-#define HTTP_CONFIG_h
+#ifndef HTTP_CONFIG_H
+#define HTTP_CONFIG_H
 /**
  *
  */

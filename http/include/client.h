@@ -1,10 +1,8 @@
-#include "contentreader.h"
-#include "request.h"
-#include "response.h"
-#include "stream.h"
+#ifndef HTTP_CLIENT_H
+#define HTTP_CLIENT_H
+#include "clientimpl.h"
 // 客户端
 namespace keno::http {
-class Logger;
 class Client {
 public:
   // Universal interface
@@ -217,8 +215,7 @@ public:
 #ifdef HTTP_OPENSSL_SUPPORT
   void enable_server_certificate_verification(bool enabled);
 #endif
-
-  void set_logger(Logger logger);
+  template <typename Logger> void set_logger(Logger logger);
 
   // SSL
 #ifdef HTTP_OPENSSL_SUPPORT
@@ -239,7 +236,5 @@ private:
   bool is_ssl_ = false;
 #endif
 };
-
-
-
 } // namespace keno::http
+#endif //
